@@ -8,9 +8,9 @@
 
 | Mode | Start here when… | What you get |
 | --- | --- | --- |
-| **Grill**<br>协作写作 | You want to reason through the paper together | One focused question at a time, a recommended answer, and prose built from your decisions |
-| **Draft**<br>论文写作 | You have evidence and want the manuscript written or improved | A draft, a reorganized paper, a revised section, an experiment plan or an evidence-based review |
-| **Style**<br>示例仿写 | You have a paper whose writing or figures you want to learn from | A source-to-target mapping and original prose or editable visuals using your own evidence |
+| **Grill** | You want to reason through the paper together | One focused question at a time, a recommended answer, and prose built from your decisions |
+| **Draft** | You have evidence and want the manuscript written or improved | A draft, a reorganized paper, a revised section, an experiment plan or an evidence-based review |
+| **Style** | You have a paper whose writing or figures you want to learn from | A source-to-target mapping and original prose or editable visuals using your own evidence |
 
 The modes share the same scientific constraints. Reported values, comparison conditions and uncertainty stay intact. Unknown results remain visible placeholders. A clear drafting request proceeds directly; Grill waits for your answers on unresolved decisions.
 
