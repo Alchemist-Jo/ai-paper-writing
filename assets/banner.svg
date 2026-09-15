@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="410" viewBox="0 0 1280 410" role="img" aria-labelledby="title desc">
+<title id="title">AI Paper Writing</title><desc id="desc">Grill: collaborate. Draft: write. Style: learn from examples. Grounded in research evidence.</desc>
+<rect width="1280" height="410" rx="22" fill="#101827"/>
+<path d="M68 66h66" stroke="#62DEC3" stroke-width="5"/>
+<text x="68" y="106" fill="#B4C1D5" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">RESEARCH • ARGUMENT • EXPRESSION</text>
+<text x="64" y="185" fill="#F7F9FE" font-family="Arial,sans-serif" font-size="65" font-weight="700" letter-spacing="-2">AI Paper Writing</text>
+<text x="68" y="225" fill="#B4C1D5" font-family="Arial,sans-serif" font-size="23">Build the argument. Write with evidence. Learn from examples.</text>
+<path d="M68 260h1144" stroke="#334155"/>
+<g font-family="Arial,sans-serif">
+<text x="68" y="307" fill="#62DEC3" font-size="23" font-weight="700">01 / GRILL</text><text x="68" y="338" fill="#B4C1D5" font-size="17">Collaborative writing</text>
+<text x="462" y="307" fill="#A8BEFF" font-size="23" font-weight="700">02 / DRAFT</text><text x="462" y="338" fill="#B4C1D5" font-size="17">Manuscript writing</text>
+<text x="856" y="307" fill="#F8C783" font-size="23" font-weight="700">03 / STYLE</text><text x="856" y="338" fill="#B4C1D5" font-size="17">Reference imitation</text>
+</g></svg>

@@ -1,0 +1,70 @@
+{
+  "schema_version": "analysis-status.v2",
+  "coverage": [
+    {
+      "conference": "ICLR",
+      "eligible_papers": 224,
+      "verified_pdfs": 224,
+      "provisional_preprints": 0,
+      "provisional_measurements": 0,
+      "automatic_measurements": 224,
+      "completed_independent_readings": 153,
+      "analysis_target_papers": 200,
+      "analysis_completed_readings": 150,
+      "foundation_target_papers": 100,
+      "foundation_completed_readings": 100,
+      "replication_target_papers": 100,
+      "replication_completed_readings": 50,
+      "status": "observed"
+    },
+    {
+      "conference": "ICML",
+      "eligible_papers": 536,
+      "verified_pdfs": 0,
+      "provisional_preprints": 417,
+      "provisional_measurements": 417,
+      "automatic_measurements": 0,
+      "completed_independent_readings": 100,
+      "analysis_target_papers": 200,
+      "analysis_completed_readings": 100,
+      "foundation_target_papers": 100,
+      "foundation_completed_readings": 100,
+      "replication_target_papers": 100,
+      "replication_completed_readings": 0,
+      "status": "observed"
+    },
+    {
+      "conference": "NeurIPS",
+      "eligible_papers": 0,
+      "verified_pdfs": 0,
+      "provisional_preprints": 0,
+      "provisional_measurements": 0,
+      "automatic_measurements": 0,
+      "completed_independent_readings": 0,
+      "analysis_target_papers": 0,
+      "analysis_completed_readings": 0,
+      "foundation_target_papers": 0,
+      "foundation_completed_readings": 0,
+      "replication_target_papers": 0,
+      "replication_completed_readings": 0,
+      "status": "not_yet_observed"
+    }
+  ],
+  "aggregate_ready": false,
+  "analysis_set": "two_phase_stratified_sample_400",
+  "analysis_target_papers": 400,
+  "analysis_completed_readings": 250,
+  "cohorts": {
+    "foundation_200": {
+      "target_papers": 200,
+      "completed_readings": 200,
+      "ready": true
+    },
+    "replication_200": {
+      "target_papers": 200,
+      "completed_readings": 50,
+      "ready": false
+    }
+  },
+  "extended_completed_readings": 253
+}

@@ -1,0 +1,236 @@
+paper_id,conference,analysis_stratum,sample_cohort,field,reported,value
+iclr-2026-ff40de6c7ac1,ICLR,oral,replication_200,aggregation_and_denominators,True,"[{""description"": ""Example accuracy over datasets, then temperature-curve AUC; dataset sample counts unstated."", ""evidence"": {""anchor"": ""area under the accuracy-temperature curve"", ""basis"": ""explicit"", ""page"": 7, ""section"": ""4.2""}, ""item"": ""Reasoning accuracy/AUC""}, {""description"": ""Three-seed mean for Llama2; one seed for Mistral/Llama3."", ""evidence"": {""anchor"": ""one random seed due to computational constraints"", ""basis"": ""explicit"", ""page"": 23, ""section"": ""C.3""}, ""item"": ""Seeds""}, {""description"": ""100 prompts; one generation per method-temperature; default τ=1 reference."", ""evidence"": {""anchor"": ""subset of 100 prompts"", ""basis"": ""explicit"", ""page"": 8, ""section"": ""4.3""}, ""item"": ""Creative writing""}, {""description"": ""100 pairs, four labels per pair, six annotators in pool."", ""evidence"": {""anchor"": ""total of 4 labels for each story pair"", ""basis"": ""explicit"", ""page"": 14, ""section"": ""Appendix A""}, ""item"": ""Human evaluation""}, {""description"": ""Mean/SD/SEM and nominal pairwise t-tests; sample-description conflict."", ""evidence"": {""anchor"": ""Standard Error of Mean"", ""basis"": ""explicit"", ""page"": 8, ""section"": ""Table 3""}, ""item"": ""Efficiency""}]"
+iclr-2026-ff40de6c7ac1,ICLR,oral,replication_200,methods_present,True,"[""mean"", ""standard deviation"", ""standard error"", ""normalized AUC"", ""win rate"", ""length-controlled win rate"", ""pairwise t-test"", ""majority vote""]"
+iclr-2026-ff40de6c7ac1,ICLR,oral,replication_200,methods_not_present,True,"[""primary-outcome intervals"", ""effect size"", ""bootstrap"", ""Bayesian analysis"", ""regression"", ""correlation coefficient"", ""multiplicity correction""]"
+iclr-2026-ff40de6c7ac1,ICLR,oral,replication_200,significance_vs_substance,True,Timing uses nominal significance; primary quality outcomes use ranks and magnitudes without inferential uncertainty. Mechanism traces are observational.
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,aggregation_unit,True,image pairs for Figure 5 and Table 1 bottom; exact pair count is not stated
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,center,True,mean
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,dispersion,True,standard deviation
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,intervals,False,not_present
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,hypothesis_tests,False,not_present
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,multiple_comparisons,False,not_present
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,bootstrap,False,not_present
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,bayesian_analysis,False,not_present
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,regression_or_correlation,True,no statistical regression; only qualitative statement that resolution-performance correlation matches prior work
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,hierarchy,True,pair level is named; seed/dataset/participant nesting is not reported
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,decision_quantities,True,"[""Dice"", ""InvDice"", ""AvgHD90cum"", ""wall-clock time"", ""GPU-hours"", ""peak HBM"", ""training time"", ""OOM capability"", ""weak-scaling efficiency""]"
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,uncertainty_reporting,True,主要 accuracy rows 使用 mean ± std；training hours、headline runtime、GPU-hours、memory-scaling claims 缺少 uncertainty。
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,caption_self_containment,True,Figure 5 caption 可解释方向、mean±std、HD90 variant 与 †；仍缺 pair count。Table 1 caption 可识别两子表，但正文才解释 configurations/backends。
+iclr-2026-3dfd982128a2,ICLR,oral,replication_200,significance_vs_substance,True,论文不做显著性检验；实质判断主要依靠容量、倍数、Pareto 位置和绝对 metric differences。
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,observation_unit,True,question × respondent model × opinion × value dimension binary label; three opinions are OR-aggregated within a response.
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,aggregation,True,TrueSkill group updates and mean win probability against other participating models.
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,human_level,True,300 question pairs × 5 annotators; mean 3-point ratings and Cohen’s kappa.
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,intervention_level,True,Paired tests across Schwartz value dimensions for baseline versus primed conditions.
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,uncertainty,True,No interval estimates or bootstrap/Bayesian analysis. Error bars are absent from main figures.
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,tests,True,"[""paired t-test"", ""Cohen’s d"", ""Cohen’s kappa"", ""Pearson correlation"", ""Spearman correlation"", ""ICC"", ""Cronbach’s alpha"", ""coefficient of variation""]"
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,multiple_comparison_control,False,not_present
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,significance_vs_substance,True,Priming reports both p-values and effect sizes; human quality and headline benchmark comparisons are descriptive.
+iclr-2026-b001d2f886cf,ICLR,oral,replication_200,denominator_risk,True,TrueSkill win-rate scale depends on the participating model set; percentage changes can inflate when baseline scores are small.
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,aggregation_units,True,"{""Figure 2"": ""vectors and distributions"", ""regression"": ""30 trainings"", ""synthetic DAS"": ""seed and partition""}"
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,central_tendency,True,means/averages are used; exact meaning of ± and plotted error bars is not defined
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,dispersion,True,reported ± values and error bars without SD/SE labeling
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,intervals,True,OLS coefficient interval in appendix table
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,hypothesis_tests,True,OLS F-test and coefficient p-value
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,multiple_comparisons,False,not_present
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,bootstrap,False,not_present
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,bayesian_analysis,False,not_present
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,regression,True,nonrobust OLS of OOD IIA on training Row EMD
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,effect_sizes,True,"[""EMD difference"", ""IIA difference"", ""OLS slope""]"
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,uncertainty_quality,True,partial; regression table is complete but figure uncertainty is underdefined
+iclr-2026-86ded246ec76,ICLR,oral,replication_200,significance_mechanism_separation,True,"association, OOD utility, and mechanism existence appear in separate sections; no direct CL→hidden-path test"
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,aggregation_units,True,"[""benchmark instance for accuracy, denominator not stated"", ""dataset row for Table 2"", ""sampled trajectory for training mixtures"", ""source file LOC for converter cost""]"
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,central_tendency,True,Undefined ∼20% average; otherwise point accuracies and an average of three converter LOC values.
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,dispersion,False,not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,intervals,False,not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,hypothesis_tests,False,not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,multiple_comparisons,False,not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,bootstrap,False,not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,bayesian,False,not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,regression,False,not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,correlation,False,not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,seed_hierarchy,True,fixed seed stated; value and run count not_present
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,uncertainty_reported,True,False
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,significance_language,True,Natural-language significant/significantly appears without a statistical test.
+iclr-2026-fac989b896c5,ICLR,oral,foundation_200,substantive_vs_statistical,True,Substantive differences are reported as accuracy gaps; statistical uncertainty is not assessed.
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,aggregation_units,True,"[""query/task success or accuracy"", ""subtask/dataset percentage"", ""scenario-level overall"", ""five-scenario average"", ""Pass@K""]"
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,denominators,True,"{""BabyAI"": ""six subsets; counts not explicit"", ""Deep Search"": ""randomly sample 400 examples wording; per-column denominator not explicit"", ""SciWorld"": ""eight selected subsets; displayed table aggregates five categories"", ""TextCraft"": ""depth strata; counts not explicit"", ""WebArena"": ""50 testing queries explicit""}"
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,center,True,overall/average point estimates
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,dispersion,False,not_present
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,intervals,False,not_present
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,hypothesis_tests,False,not_present
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,multiple_comparison,False,not_present
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,bootstrap,False,not_present
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,bayesian,False,not_present
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,regression_correlation_fit,False,not_present
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,seed_hierarchy,False,not_present
+iclr-2026-fb08cee992a1,ICLR,oral,replication_200,decision_quantities,True,"[""accuracy"", ""success rate"", ""Overall"", ""Pass@K"", ""training reward"", ""cumulative rounds"", ""cumulative time""]"
+iclr-2026-dc7ecb0275a2,ICLR,oral,replication_200,aggregation_unit,True,"每个 question category × n 约 1,000 个 rephrased questions；ρ/δ 先在 direct/reversed 条件组合，ρ̄/δ̄ 再按 Eq.(3) 对 n 做 log-weighted 1/n 积分。"
+iclr-2026-dc7ecb0275a2,ICLR,oral,replication_200,central_quantities,True,ρ、δ、ρ̄、δ̄、|ρ̄|、Spearman correlation、log-linear trend；Table 2 给 n=10 的 OpenAI point values。
+iclr-2026-dc7ecb0275a2,ICLR,oral,replication_200,uncertainty,True,Figure 4/5/11 等图注标注 95% confidence intervals；Appendix D.3 明确 bootstrap，但未报告重采样层级和次数。
+iclr-2026-dc7ecb0275a2,ICLR,oral,replication_200,hypothesis_tests,True,未报告 conventional significance tests、multiple-comparison correction、Bayesian analysis 或完整回归表；“not significant”只在 o4-mini joint trend 文字中出现。
+iclr-2026-dc7ecb0275a2,ICLR,oral,replication_200,levels,True,模型、任务 category、difficulty n；无 participant 层级。
+iclr-2026-dc7ecb0275a2,ICLR,oral,replication_200,interpretive_boundary,True,ρ 与 δ 的相关和 CoT/embedding 观察支持模式描述，无法单独识别 hidden intent 或因果机制。
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,aggregation_units,True,"[""solver × problem × pass × run for timing"", ""PCG tolerance × instance/run for diagnostics"", ""roll-out × policy for simulation success"", ""epoch × curve for IL/drifting loss"", ""method × one hardware trial for Figure 13""]"
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,central_and_dispersion,True,timing uses mean and 2σ; Figure 3 calls them 2σ confidence intervals; warm-start uses ±2 standard deviation intervals; Figure 4/9/11–13 do not fully define dispersion.
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,uncertainty_reporting,True,"{""drifting_success"": ""not_present"", ""gradient_diagnostic"": ""distribution without CI/test"", ""hardware"": ""not_present"", ""timing_appendix_table"": ""observed"", ""timing_main_figure"": ""observed"", ""warm_start"": ""observed ±2 SD""}"
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,hypothesis_tests,False,not_present
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,multiple_comparisons,False,not_present
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,bootstrap,False,not_present
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,bayesian_analysis,False,not_present
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,regression_or_correlation,False,not_present
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,effect_size,False,not_present
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,decision_quantities,True,"[""speedup ratio"", ""mean time"", ""cosine similarity"", ""success rate"", ""parameter percentage change"", ""wall-clock time""]"
+iclr-2026-bdf44f310e82,ICLR,oral,replication_200,figure_table_independence,True,Figure 3 caption is relatively self-contained for pass and error-bar meaning; most qualitative figures and Figure 4 lack standalone denominator/uncertainty information.
+iclr-2026-159f6b7208d5,ICLR,oral,foundation_200,aggregation_units,True,Exhaustive class enumeration uses graph/configuration counts; runtime and oracle benchmarks aggregate over 50 random models; Figure 7 aggregates over 25 random irreducible models per setting; stock analysis is one dataset/class.
+iclr-2026-159f6b7208d5,ICLR,oral,foundation_200,denominators,True,"Table 3 counts all weakly connected digraphs and irreducible subsets; Tables 4–5 use 50 models per completed setting; Figure 7 uses 25 models; stock has 1,331 daily observations but graph-level class size is the decision quantity."
+iclr-2026-159f6b7208d5,ICLR,oral,foundation_200,center_and_dispersion,True,Tables 4–5 and Figure 7 report mean ± standard deviation. Table 3 and stock graph counts are point counts.
+iclr-2026-159f6b7208d5,ICLR,oral,foundation_200,tests_and_models,True,"No hypothesis tests, multiple-comparison procedures, bootstrap, Bayesian analysis, regression, or confidence intervals are reported."
+iclr-2026-159f6b7208d5,ICLR,oral,foundation_200,decision_quantities,True,"Equivalence-class count, runtime seconds, SHD to closest equivalent truth, minimum SHD over class, and solid/dashed edge status."
+iclr-2026-159f6b7208d5,ICLR,oral,foundation_200,mechanism_vs_significance,True,The dense-graph and latent-dimensionality explanations are author interpretations of SHD patterns; no independent mechanism measurement or formal significance separation is given.
+iclr-2026-de09352af556,ICLR,oral,foundation_200,aggregation_unit,True,Advertiser aggregate over an A/B day window for real experiments; simulated budget cell or policy mixture for simulated experiments; evaluator metrics aggregate trajectory/pair samples.
+iclr-2026-de09352af556,ICLR,oral,foundation_200,center_and_dispersion,True,Main Tables 1–4 and 8/11–13 report point values and relative deltas; Table 5 reports values with ± on OOD; Figures 10–13 show 10 seed curves.
+iclr-2026-de09352af556,ICLR,oral,foundation_200,uncertainty,True,"No confidence interval, hypothesis test, multiple-comparison correction, bootstrap, Bayesian analysis, regression or effect-size calculation is reported. The meaning of Table 5 ± is not specified."
+iclr-2026-de09352af556,ICLR,oral,foundation_200,decision_quantities,True,"GMV, BuyCnt, ROI, Cost, relative delta, MAE, AUC, SMAPE, Lipschitz constants, Online Rate, Bad Case Rate and Cost Rate."
+iclr-2026-de09352af556,ICLR,oral,foundation_200,practical_threshold,True,"Cost within ±2% is the stated acceptable tolerance; Appendix F.4 pathology thresholds are >10% single-step cost, >40% first/last 24-step cost, or total cost <90%."
+iclr-2026-de09352af556,ICLR,oral,foundation_200,mechanism_vs_significance,True,"Constraint ablation and Lipschitz plots provide mechanism-direction evidence, while statistical significance and replicate uncertainty remain unreported."
+iclr-2026-de09352af556,ICLR,oral,foundation_200,caption_sufficiency,True,"Tables state units, horizons and metric direction for most comparisons; Figure 10–13 captions identify 10 seeds but do not provide aggregate definitions or dispersion summaries."
+iclr-2026-6962fe3d904f,ICLR,oral,foundation_200,aggregation_unit,True,gene predictions aggregated by cell line; run-level means across seeds where stated
+iclr-2026-6962fe3d904f,ICLR,oral,foundation_200,denominator,True,"18,377 protein-coding genes named; test-chromosome gene counts are not separately reported"
+iclr-2026-6962fe3d904f,ICLR,oral,foundation_200,central_measures,True,"[""MSE"", ""MAE"", ""Pearson correlation"", ""percentages and medians in Table 8""]"
+iclr-2026-6962fe3d904f,ICLR,oral,foundation_200,dispersion,True,mean +/- standard deviation for main Table 1 and many appendix tables
+iclr-2026-6962fe3d904f,ICLR,oral,foundation_200,uncertainty_absent,True,"[""confidence intervals"", ""p-values"", ""hypothesis tests"", ""bootstrap"", ""Bayesian analysis"", ""multiple-comparison correction"", ""power analysis""]"
+iclr-2026-6962fe3d904f,ICLR,oral,foundation_200,selection,True,validation MSE selects best model
+iclr-2026-6962fe3d904f,ICLR,oral,foundation_200,significance_language,True,authors compare improvements with one standard deviation and call larger differences robust; no inferential test.
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,aggregation_unit,True,target model pair within full-benchmark accuracy-difference bucket; trials average over data/source-target partitions
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,denominators,True,all target pairs in each bucket for agreement; all target models for mean estimation error; all model pairs for Kendall tau
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,center,True,mean across 50 trials; Table 3 prefixes up to 100 trials
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,dispersion_interval,True,95% bootstrap confidence intervals; Figures 10/12 explicitly use 10 trials
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,hypothesis_testing,True,Kendall tau correlations between settings report p<0.05
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,multiple_comparisons,False,not_present
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,bootstrap,True,observed
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,bayesian_analysis,False,not_present
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,regression_or_fit,False,not_present
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,correlation,True,Kendall tau at settings level and as the existing meta-evaluation measure
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,decision_quantities,True,"[""MDAD"", ""agreement"", ""mean estimation error"", ""Kendall tau"", ""pairwise difference coverage""]"
+iclr-2026-51419d6897b2,ICLR,oral,replication_200,statistical_vs_practical_meaning,True,Intervals describe trial variability; MDAD supplies the practical distinguishability threshold; the paper does not treat a p-value as evidence of universal reliability.
+iclr-2026-32bffb4a35b9,ICLR,oral,replication_200,aggregation_units,True,"Math E[R̂] is the fraction of five sampled answers passing the proxy reward at each cutoff. Code E[R̂] is a test-case pass fraction from one temperature-0 answer, or 1 when RM loophole is triggered. F1/Recall aggregate detector outputs against counterfactual labels; sample counts and class denominators are not reported."
+iclr-2026-32bffb4a35b9,ICLR,oral,replication_200,central_quantities,True,"Accuracy, average passing rate, reward mean, mean TRACE score, F1, and Recall."
+iclr-2026-32bffb4a35b9,ICLR,oral,replication_200,uncertainty,True,"No error bars, standard deviations, confidence intervals, bootstrap, Bayesian posterior, p-values, or multiple-comparison correction are reported for the main results."
+iclr-2026-32bffb4a35b9,ICLR,oral,replication_200,training_seed,True,Not present. K-means alone reports n_init=10 and random seed=42.
+iclr-2026-32bffb4a35b9,ICLR,oral,replication_200,decision_threshold,True,Initial-policy average TRACE score; no threshold calibration curve or uncertainty is reported.
+iclr-2026-32bffb4a35b9,ICLR,oral,replication_200,mechanism_evidence,True,"Figures 6, 19, 20, and 24–27 provide qualitative shortcut examples; Figures 7–8 and 15 provide behavioral timing evidence, not an internal causal measurement."
+iclr-2026-009a09dc4347,ICLR,oral,foundation_200,aggregation_units,True,benchmark/model score in Table 2–6; Table 3/4 include AVG with unspecified weighting; Table 8 averages 2-player pairwise judge configurations.
+iclr-2026-009a09dc4347,ICLR,oral,foundation_200,denominators,True,Table 7 explicitly has three runs; Table 8 describes pairwise judge configurations; other tables do not state seed/task denominators in captions.
+iclr-2026-009a09dc4347,ICLR,oral,foundation_200,center_and_dispersion,True,Table 7 has mean ± standard deviation; Table 2–6 are point estimates.
+iclr-2026-009a09dc4347,ICLR,oral,foundation_200,intervals_tests_multiple_comparisons_bootstrap_bayesian_regression,False,not_present
+iclr-2026-009a09dc4347,ICLR,oral,foundation_200,significance_vs_substantive_vs_mechanism,True,No hypothesis tests distinguish statistical significance from substantive significance. Mechanism evidence is player-count ablation rather than DualGap/variance measurement.
+iclr-2026-009a09dc4347,ICLR,oral,foundation_200,caption_self_containment,True,Table 2 names three benchmarks and judge; Table 7 names judges/runs but not benchmark; Table 8 specifies its 2-player aggregation and copied 3-player value.
+iclr-2026-009a09dc4347,ICLR,oral,foundation_200,visualization_summary,True,one explanatory figure; all quantitative evidence is tabular; no curve or distribution plot.
+iclr-2026-255bea54f97f,ICLR,oral,foundation_200,aggregation_units,True,"Table 1: dataset × probe budget × method, with 10 random-projection runs averaged. ANNS curves: aggregation across runs is not specified."
+iclr-2026-255bea54f97f,ICLR,oral,foundation_200,denominators,True,Recall percentage for k-MIPS/ANNS; QPS throughput; indexing overhead seconds and relative percentage; no participant layer.
+iclr-2026-255bea54f97f,ICLR,oral,foundation_200,center_and_dispersion,True,"Means for Table 1; curve values and single wall-clock overheads elsewhere; no standard deviation, interval or quantile."
+iclr-2026-255bea54f97f,ICLR,oral,foundation_200,tests_and_models,True,"No hypothesis test, multiple-comparison procedure, bootstrap, Bayesian analysis, regression or correlation is reported."
+iclr-2026-255bea54f97f,ICLR,oral,foundation_200,decision_quantities,True,"[""recall@10/100/1"", ""QPS"", ""Probe@10/100/1K/10K recall"", ""indexing seconds"", ""additional index cost percentage"", ""reference-angle cosine""]"
+iclr-2026-255bea54f97f,ICLR,oral,foundation_200,mechanism_vs_significance,True,"Reference-angle mechanism is linked to structure/L trends, but practical effect and uncertainty are not statistically separated."
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,aggregation_unit,True,random seed/model run; task-specific test sequences are shown as curves
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,denominator,False,not_present
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,center,True,mean across 8 or 14 seeds
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,dispersion,True,Figure 3 displays a band but construction is not defined; other figures show lines only
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,intervals,False,not_present
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,hypothesis_tests,False,not_present
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,multiple_comparison,False,not_present
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,bootstrap,False,not_present
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,bayesian,False,not_present
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,regression,False,not_present
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,correlation,False,not_present
+iclr-2026-e6952544908b,ICLR,oral,foundation_200,decision_quantities,True,"[""plateau test loss"", ""attention probability"", ""training-length trend""]"
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,aggregation_units,True,主表以 benchmark track/method 聚合 VBench++ 指标；条件表以 audio/skeleton task aggregate 指标；Table 11 从 50 test cases、50-clip length 计算 VBench。
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,denominators,True,Appendix A.2 给 generic n=152（50 秒）、n=14（250 秒）、conditional n=10；没有按指标列出有效 frame/clip/task 分母。
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,center_and_dispersion,True,百分比、FVD、PSNR、SSIM 为单点聚合值；Figure 5 只画趋势，未说明误差带、跨 seed 或 range。
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,intervals_tests_multiple_comparisons_bootstrap_bayesian_regression,True,未报告 CI、标准差/标准误、hypothesis test、bootstrap、Bayesian analysis、regression/correlation 或 multiple-comparison correction。
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,seed_task_dataset_participant_levels,True,task/dataset 层级有 track 和 sample count，seed/participant 层级未报告；无 human evaluation。
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,decision_quantities,True,Table 1 bold/underline first/second；Dynamic Degree 需反向解释，作者指出异常高值可表示 uncontrollable motion degradation；conditional 表用箭头定义方向。
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,significance_vs_substantive_vs_mechanism,True,0.63% duration drop、conditional FVD 和 consistency percentages 是实质量；Fig.6、Table 4 的 Eimg removal 是机制证据；p.8 的 “significant gains” 没有配套检验。
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,caption_self_containment,True,表注可识别 track/方向，但 metric semantics 交给 VBench++ 引用；Fig.5 可读 trend 但没有 uncertainty，Fig.7–9/11–18 只能作定性 evidence。
+iclr-2026-0f9a4f0ba34a,ICLR,oral,replication_200,visualization_summary,True,正文以 Table 1–3 做 cross-setting matrix，Figure 5 做 length curves，Figure 6 做 error images，Figure 7–9 做 qualitative/long-range cases；附录扩展 metric attacks 和 video contact sheets。
+iclr-2026-198f06993051,ICLR,oral,replication_200,aggregation_unit,True,"For each of 20 systems, average MOS/CMOS/SMOS within each of CLEAN/NOISY/WILD/KIDS; compute rank correlation across the 20 system rows. Table 2 then averages over four domains."
+iclr-2026-198f06993051,ICLR,oral,replication_200,denominators,True,Main correlation cells use 20 systems per domain×subjective score; LOOCV uses 3 training domains/1 held-out domain; multilingual proxy uses the 14 evaluated language datasets.
+iclr-2026-198f06993051,ICLR,oral,replication_200,central_quantities,True,"Means of human ratings, Spearman ρ for ranking, Pearson r for factor/metric associations and fit labels, Simple Mean versus Learned Weights LOOCV point scores."
+iclr-2026-198f06993051,ICLR,oral,replication_200,dispersion,True,"MOS/CMOS/SMOS tables use ± values, but the paper does not define their statistic; Table 3/4/5/8 and TTSDS2 Table 2 cells are mostly point estimates."
+iclr-2026-198f06993051,ICLR,oral,replication_200,intervals,True,not_present: no confidence intervals or bootstrap intervals.
+iclr-2026-198f06993051,ICLR,oral,replication_200,hypothesis_tests,True,Authors state all TTSDS/TTSDS2 correlations and all Table 8 factor correlations are significant at p<0.05; Figure 7 displays significant p<0.05 Spearman correlations. Test form and multiplicity correction are not reported.
+iclr-2026-198f06993051,ICLR,oral,replication_200,regression,True,Linear regression learns factor weights for LOOCV; Figure 2 draws overall and domain-specific least-squares fits.
+iclr-2026-198f06993051,ICLR,oral,replication_200,bayesian_bootstrap,True,not_present.
+iclr-2026-198f06993051,ICLR,oral,replication_200,multiple_comparison,True,not_present.
+iclr-2026-198f06993051,ICLR,oral,replication_200,seed_level_repeats,True,not_present for metric/system scores; no random seed or repeat protocol is given.
+iclr-2026-198f06993051,ICLR,oral,replication_200,decision_quantities,True,"ρ>0.50, average ρ≈0.67, parity defined as MOS/CMOS within 0.05 of ground truth, and 3-of-4 LOOCV wins for Simple Mean."
+iclr-2026-198f06993051,ICLR,oral,replication_200,interpretation,True,Statistical significance and practical substitution are distinct: §5 explicitly says TTSDS2 cannot replace subjective evaluation despite robust correlations.
+iclr-2026-8374ca36d622,ICLR,oral,replication_200,aggregation_units,True,MMLU token/question activations for probes; active features over sequences for Smoothness; one activation mean per HH-RLHF completion; 30 steering features for judge scores.
+iclr-2026-8374ca36d622,ICLR,oral,replication_200,central_quantities,True,"probe accuracy, FVE, Cosine Similarity, Fraction Alive, Smoothness, Autointerp score, rejected-minus-chosen activation difference, token-length difference, Pearson correlation, intervention success, coherence."
+iclr-2026-8374ca36d622,ICLR,oral,replication_200,dispersion_or_intervals,True,"Autointerp, absorption, and Table 10 values report standard deviations; most results have no uncertainty display."
+iclr-2026-8374ca36d622,ICLR,oral,replication_200,hypothesis_tests,True,Two-sided t-test for rejected/chosen response length gives p=9e−10; Figure 6 annotates several Pearson-correlation p-values.
+iclr-2026-8374ca36d622,ICLR,oral,replication_200,multiple_comparisons,False,not_present
+iclr-2026-8374ca36d622,ICLR,oral,replication_200,bootstrap_bayesian_regression,False,not_present
+iclr-2026-8374ca36d622,ICLR,oral,replication_200,seed_task_dataset_levels,True,"Seeds are not reported; task/dataset levels are explicit for MMLU, Wikipedia, FineFineWeb, The Pile, and HH-RLHF first 1,000 samples."
+iclr-2026-8374ca36d622,ICLR,oral,replication_200,decision_quantities,True,"relative probe accuracy, mean metric differences in Table 2, Pareto tradeoff in Figure 5, and top-15 feature rankings in Table 6."
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,aggregation_unit,True,客观生成表的 test-set aggregate point estimates；理解/文本为 benchmark accuracy；reasoning 为场景级 Mechanical Turk 5-scale MOS。具体 test-set 分母、评审人数和音频-评审映射未报告。
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,center,True,FD/KL/IS/CL/AES 为 point metrics；OVL/REL 与 Table 4 为 mean opinion scores。
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,uncertainty,True,Table 1 注明 OVL/REL 95% CI ≈ 0.10；Table 4 报 mean ± 95% CI；CI 计算方法未说明。
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,hypothesis_tests,False,not_present
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,multiple_comparisons,False,not_present
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,bootstrap,False,not_present
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,bayesian,False,not_present
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,regression_or_correlation,False,not_present
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,decision_quantities,True,best/second-best formatting、accuracy Mean、CLAP gap 0.15、CE/CU/PC/PQ all-positive filtering、DPO divergence 曲线。
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,seed_task_dataset_levels,True,任务和数据集层级可见；seed 数量/跨 seed 方差 unavailable。
+iclr-2026-e943a2f002d1,ICLR,oral,replication_200,interpretation_boundary,True,论文区分了 prompt adherence/quality、text capability 和 subjective controllability 的对象，但没有把 statistical significance、practical significance 和 mechanism evidence 以正式检验分开。
+iclr-2026-a15993a7b6c3,ICLR,oral,replication_200,aggregation_units,True,MOS 按 annotator/sample 报均值±标准差；WER/CER、SIM-O、PESQ、STOI、UTMOS、RTF 按 model/configuration/dataset split 报单值；Appendix G 总分母为 108 segments。
+iclr-2026-a15993a7b6c3,ICLR,oral,replication_200,uncertainty,True,Table 1/11 主观分数有 mean±SD；Table 2/3/6/7/8 主要为 point estimates；无 CI、bootstrap、Bayesian、回归、显著性或多重比较。
+iclr-2026-a15993a7b6c3,ICLR,oral,replication_200,decision_quantities,True,WER/CER 越低越好，SIM-O/PESQ/STOI/UTMOS/MOS/RTF 按各表方向解释；没有 preregistered threshold。
+iclr-2026-a15993a7b6c3,ICLR,oral,replication_200,protocol_caveats,True,MoonCast 长多说话人结果含 successful-case/retry 或 subset；Higgs Audio V2 使用并行 3-second chunks；VibeVoice 采用 strict streaming。
+icml-2026-95c954ca7cb0,ICML,oral,foundation_200,aggregation_and_denominators,True,"[{""description"": ""Per-dataset scores for nine benchmarks; table does not disclose example counts, seed averaging or dispersion."", ""evidence"": {""anchor"": ""Main Results"", ""basis"": ""layout_observation"", ""page"": 6, ""section"": ""Table 1""}, ""item"": ""Main benchmark tables""}, {""description"": ""N=979 triplets; 3 annotators; majority vote; confusion percentages are of total."", ""evidence"": {""anchor"": ""% of Total"", ""basis"": ""explicit"", ""page"": 8, ""section"": ""Table 3""}, ""item"": ""PV oracle""}, {""description"": ""N=273 pairs; accuracy/F1 against human binary labels; stochastic methods run five times per sample at T=0.7 for exact-verdict consistency."", ""evidence"": {""anchor"": ""five times for each sample"", ""basis"": ""explicit"", ""page"": 17, ""section"": ""Appendix E.1""}, ""item"": ""Verifier challenge""}, {""description"": ""Same data and base model per Table 2; values are descriptive benchmark scores with no uncertainty."", ""evidence"": {""anchor"": ""same data and base model"", ""basis"": ""explicit"", ""page"": 8, ""section"": ""Table 2""}, ""item"": ""Ablation""}]"
+icml-2026-95c954ca7cb0,ICML,oral,foundation_200,methods_present,True,"[""benchmark score"", ""arithmetic cell difference"", ""accuracy"", ""F1-score"", ""Cohen’s κ"", ""confusion matrix"", ""majority vote"", ""five-run consistency""]"
+icml-2026-95c954ca7cb0,ICML,oral,foundation_200,methods_not_present,True,"[""confidence intervals"", ""standard deviation/standard error for benchmark outcomes"", ""effect size"", ""bootstrap"", ""Bayesian analysis"", ""regression"", ""correlation analysis"", ""multiple-comparison correction"", ""reported random-seed aggregation""]"
+icml-2026-95c954ca7cb0,ICML,oral,foundation_200,significance_vs_substance,True,论文在 §3.1 使用“significant performance gains”作为叙述性结论，但主结果没有显著性检验；Table 3/4 的 accuracy/agreement 与 consistency 是决策量，不能单独证明 MoCA 的训练因果机制。
+icml-2026-95c954ca7cb0,ICML,oral,foundation_200,figure_table_independence,True,Table 3 的 confusion percentages 可独立核算；Table 4 的 consistency 定义在附录 E.1；Table 1/2 的 caption 能说明比较对象，但没有 seed、分母或不确定性。
+icml-2026-c61e72161d50,ICML,oral,foundation_200,aggregation_units,True,"[""CUDA-event timing iterations"", ""task/configuration speedup aggregation"", ""GraSS evaluation examples"", ""50 GraSS retraining subsets per example""]"
+icml-2026-c61e72161d50,ICML,oral,foundation_200,central_tendency,True,Mean of 10 post-warm-up CUDA-event iterations; global/task geomean speedups; average LDS over evaluation examples.
+icml-2026-c61e72161d50,ICML,oral,foundation_200,dispersion_or_intervals,True,not_present for timing/configuration uncertainty; no confidence intervals or error-definition text accompanies the main results.
+icml-2026-c61e72161d50,ICML,oral,foundation_200,hypothesis_tests,False,not_present
+icml-2026-c61e72161d50,ICML,oral,foundation_200,multiple_comparisons,False,not_present
+icml-2026-c61e72161d50,ICML,oral,foundation_200,seed_level,False,not_present
+icml-2026-c61e72161d50,ICML,oral,foundation_200,decision_quantities,True,"[""speedup"", ""relative Gram Frobenius error"", ""OSE spectral error"", ""relative residual"", ""LDS""]"
+icml-2026-c61e72161d50,ICML,oral,foundation_200,figure_caption_independence,True,"Main Figures 1, 3, 4 and Table 1 state axes/task/hardware; the F/G panel captions rely on Figures 5–6 for the method/parameter legend."
+icml-2026-44fb3b3b59c9,ICML,oral,foundation_200,empirical_statistics,False,not_applicable
+icml-2026-44fb3b3b59c9,ICML,oral,foundation_200,theoretical_probability,True,"Theorems 1 and 2 use probability at least 1-delta; proofs use Bennett, empirical Bennett, Hoeffding, KL, and Pinsker."
+icml-2026-44fb3b3b59c9,ICML,oral,foundation_200,aggregation_unit,True,K episodes and effective-state visit counts.
+icml-2026-44fb3b3b59c9,ICML,oral,foundation_200,uncertainty_in_visuals,True,"not_present; visual inventory contains diagrams, trajectory tables, and algorithms rather than empirical error displays."
+icml-2026-422971fda9c0,ICML,oral,foundation_200,aggregation_and_denominators,True,Algorithmic accuracy 按 output/retrieved token；通常10 seeds，MULTIPLICATION 3。Semantic curves 按 validation perplexity；downstream 按 task accuracy/average；MBPP 为 3-shot pass@k。
+icml-2026-422971fda9c0,ICML,oral,foundation_200,methods_present,True,"[""mean"", ""standard deviation"", ""validation perplexity/loss"", ""token-level accuracy"", ""matched-loss/token-savings comparison"", ""pass@k""]"
+icml-2026-422971fda9c0,ICML,oral,foundation_200,methods_not_present,True,"[""confidence intervals"", ""effect sizes"", ""bootstrap"", ""Bayesian analysis"", ""regression"", ""multiple-comparison correction"", ""hardware wall-clock/energy accounting""]"
+icml-2026-422971fda9c0,ICML,oral,foundation_200,significance_vs_substance,True,正文使用 significantly/consistently，primary figures 多无 uncertainty；附录 mean±SD 支持方向而非完整 inferential claim。GLUE average 掩盖少数 task 的反向变化。
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,aggregation_units,True,"[""LIBERO suite/task columns"", ""four-suite/task arithmetic Average"", ""real-robot task successes out of 20"", ""single latency/FLOPs values or unspecified repeats""]"
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,center,True,Arithmetic average for table Average columns; success counts/20 for real robot.
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,dispersion,False,not_present
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,intervals,False,not_present
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,hypothesis_tests,False,not_present
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,multiple_comparisons,False,not_present
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,bootstrap,False,not_present
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,bayesian,False,not_present
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,regression_or_fit,False,not_present
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,decision_quantities,True,"[""success rate"", ""latency"", ""FLOPs"", ""speedup"", ""pruning ratio"", ""4.5 ms pruning-stream overhead""]"
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,uncertainty_reporting,True,"No seed-level variance or error expression appears in tables, figures, or captions."
+icml-2026-159ec0c7baad,ICML,spotlight,foundation_200,caption_self_containment,True,"Captions identify the quantity and setting, but they do not state episode denominators or repeat counts for simulations."
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,aggregation_unit,True,Portfolio: 50 true distributions × 10 datasets; regression: 10 true distributions × 10 datasets; high-dimensional portfolio: 10 × 10 trials per J.
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,denominator,True,"Task/dataset instances, with out-of-sample Monte Carlo denominators of 10^7 in the main regression instance and 10^6 in Appendix F.3."
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,central_tendency,True,Average/mean curves and mean relative improvements.
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,dispersion,True,Visible error bars and boxplots; several main captions do not define their convention.
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,intervals,True,Appendix F.1 explicitly says bootstrapped confidence intervals; nominal level is not_present.
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,hypothesis_tests,False,not_present
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,multiple_comparisons,False,not_present
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,bootstrap,True,Bootstrap resampling is used both for coverage surrogate and for reported intervals in Appendix F.
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,bayesian_analysis,False,not_present
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,regression_or_fit,True,not_present as a statistical analysis; linear regression is a task.
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,correlation,False,not_present
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,seed_task_dataset_levels,True,Task/distribution and dataset levels are reported; seed level is not_present.
+icml-2026-a6577855483d,ICML,spotlight,foundation_200,statistical_significance_vs_mechanism,True,No hypothesis-test significance claim; mechanism evidence is geometry/coverage figures.

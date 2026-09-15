@@ -1,0 +1,26 @@
+{
+  "should_trigger": [
+    "使用 $ai-paper-writing 重构这份 ICLR 论文。",
+    "Use ai-paper-writing to imitate the paragraphs and figures in my reference paper.",
+    "使用 ai-paper-writing，按 CVPR 示例组织方法和视觉实验。",
+    "用 ai-paper-writing 从现有结果确定实验主张。",
+    "用 ai-paper-writing 修改摘要和 caption，保持数字。",
+    "Use ai-paper-writing in Grill mode and ask one question at a time.",
+    "使用 ai-paper-writing，Draft 模式直接完成全文。",
+    "使用 ai-paper-writing，Style 模式仿写示范段落。"
+  ],
+  "should_not_trigger": [
+    "帮我写一篇 ICLR 论文。",
+    "Rewrite my CVPR abstract to follow this sample.",
+    "不要使用 ai-paper-writing，只总结这篇论文。",
+    "用 ai-paper-writing 训练这个模型。",
+    "用 ai-paper-writing 提交这篇论文。",
+    "请 grill 我的论文主张。"
+  ],
+  "near_neighbor": [
+    "使用 technical-report-style 改写实验周报。",
+    "Explain what ai-paper-writing does.",
+    "用 ai-paper-writing 写一篇博客。",
+    "Please translate only this paragraph."
+  ]
+}
