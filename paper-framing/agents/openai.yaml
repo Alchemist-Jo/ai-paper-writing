@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Framing"
+  short_description: "Fix a paper's storyline, claims and section order"
+  default_prompt: "Use $paper-framing to check whether this paper's storyline and claims hold together."
+
+policy:
+  allow_implicit_invocation: true

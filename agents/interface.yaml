@@ -1,6 +1,0 @@
-interface:
-  display_name: "AI Paper Writing"
-  short_description: "Grill 协作写作 · Draft 论文写作 · Style 示例仿写"
-  default_prompt: "Use $ai-paper-writing in Grill, Draft or Style mode to complete the requested paper artifact using project evidence and relevant statistical or example-paper guidance."
-policy:
-  allow_implicit_invocation: false

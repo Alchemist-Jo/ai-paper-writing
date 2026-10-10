@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Opening"
+  short_description: "Write the abstract, introduction and related work"
+  default_prompt: "Use $paper-opening to rewrite the abstract and introduction of this paper."
+
+policy:
+  allow_implicit_invocation: true

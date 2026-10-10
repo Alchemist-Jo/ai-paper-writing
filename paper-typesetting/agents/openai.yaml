@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Typesetting"
+  short_description: "Fix LaTeX layout, page budget, bib and remote sync"
+  default_prompt: "Use $paper-typesetting to fix the layout and fit the main body within the page limit."
+
+policy:
+  allow_implicit_invocation: true

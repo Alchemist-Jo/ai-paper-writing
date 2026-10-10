@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Checklist"
+  short_description: "Audit a paper and report tiered problems with owners"
+  default_prompt: "Use $paper-checklist to run a pre-submission check on this paper."
+
+policy:
+  allow_implicit_invocation: true

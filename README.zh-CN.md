@@ -1,75 +1,78 @@
-<p align="center"><img src="assets/banner.svg" alt="AI Paper Writing：Grill 协作写作、Draft 论文写作、Style 示例仿写" width="100%"></p>
+# AI Paper Writing Skills
 
-<p align="center"><strong>从研究证据到论文表达：三个模式，一套明确的写作流程。</strong><br>ICLR / ICML 统计 · CVPR 案例 · 段落与图表仿写</p>
+本仓库包含 8 个用于撰写和修改机器学习论文的 agent skill，面向 LaTeX 项目。每个 skill 负责论文的一个部分，按长程任务的方式工作：
 
-<p align="center"><a href="README.md">English</a> · <a href="SKILL.md">Skill 入口</a> · <a href="SOURCE.md">来源说明</a></p>
+1. 先读项目，识别论文已有的约定。
+2. 用台账记录必须保留的内容。
+3. 大范围任务拆给并行 subagent。
+4. 在渲染后的页面上检查结果。
+5. 只在属于作者的决定上停下来询问。
 
-## 三个模式
+skill 采用 Agent Skills 格式，Claude Code 和 Codex 都能加载。讨论和报告用中文，论文正文用英文。
 
-| 模式 | 使用场景 | 产物 |
+## Skill 列表
+
+| Skill | 负责范围 | 请求示例 |
 | --- | --- | --- |
-| **Grill** | 协作写作：希望通过讨论明确主张和表达 | 每次一个问题，给出推荐答案，依据你的决定逐步完成文字 |
-| **Draft** | 论文写作：已有材料，需要直接起草、重构、润色或审查 | 完整稿件、章节修改、实验方案或有证据的审查结果 |
-| **Style** | 示例仿写：希望学习指定论文的语言、段落、图表 | 来源到目标的映射，以及使用自身证据完成的文字或可编辑图表 |
+| `paper-framing` | 核心论点、论证链、贡献表述、章节大纲 | 理一下这篇论文的主线 |
+| `paper-opening` | 摘要、引言、相关工作、引用核对 | 重写摘要和引言 |
+| `paper-method` | 方法部分、符号、公式、理论陈述 | 方法部分符号统一，去掉数字 |
+| `paper-experiments` | 实验设置、结果、消融、统计、benchmark 构建 | 实验分析不要复述表格数字 |
+| `paper-visuals` | 按分阶段流程画图、表格、图注 | 方法图不改逻辑，优化呈现 |
+| `paper-language` | 最小修改润色、用词、中译英 | 最小改动润色这一节 |
+| `paper-typesetting` | 版面、页数预算、声明、参考文献、Overleaf 或 Git 同步 | 压到 9 页，图不要在标题下面 |
+| `paper-checklist` | 只读检查与投稿前检查，问题交给上面对应的 skill | 投稿前全文检查 |
 
-三个模式都保护事实、数值、比较条件和不确定性。Grill 等待你的关键决定；Draft 和 Style 在信息充分时直接完成请求。
+`paper-checklist` 不修改论文。它按三个级别输出编号表格：阻碍提交、影响理解、局部表达。每一行注明负责修改的 skill。回复“修 1、3、5”后，由对应 skill 修改这些行，再重跑相关检查。
 
-## 安装与调用
+`paper-visuals` 的画图流程分为以下阶段：
 
-Codex：
+1. 读取项目中已有的图。
+2. 写一份所有图共用的设计 brief。
+3. 新图或重画先确认构思。
+4. 用可复现的 draw.io、TikZ 或绘图脚本源文件作图。
+5. 导出矢量 PDF。
+6. 用 `figure_audit.py` 检查印刷字号、字体嵌入、Type 3 字体、配色漂移和类似代码的标签。
+7. 在页面上与上一版并排比较。
+
+只改呈现时，脚本会核对新旧两版的元素和标签完全一致。
+
+## 约定与范文
+
+每个 skill 修改前先识别论文已有的约定，例如图注格式、行间公式环境和段首小标题宏，并保持这些约定。优先级依次为：
+
+1. 会议规则
+2. 用户的明确指示
+3. 论文已有的约定
+4. skill 给出的默认形式
+
+需要参考另一篇论文的结构或排版时，在请求中给出 arXiv 编号、PDF 或 TeX 源文件。skill 把它缓存在 `~/.cache/paper-exemplars/<id>/`，只作为资料读取。
+
+## 安装
+
+克隆仓库后，把每个 skill 链接到所用 agent 的 skill 目录。
 
 ```bash
-git clone https://github.com/Alchemist-Jo/ai-paper-writing.git ~/.codex/skills/ai-paper-writing
+git clone https://github.com/Alchemist-Jo/ai-paper-writing.git ~/paper-skills
+
+# Claude Code
+mkdir -p ~/.claude/skills
+for d in ~/paper-skills/paper-*; do ln -sfn "$d" ~/.claude/skills/"$(basename "$d")"; done
+
+# Codex
+mkdir -p ~/.agents/skills
+for d in ~/paper-skills/paper-*; do ln -sfn "$d" ~/.agents/skills/"$(basename "$d")"; done
 ```
 
-Claude Code：
+所有 skill 都允许模型按请求自动选用，也可以按名称调用：Claude Code 中写 `/paper-checklist`，Codex 中写 `$paper-checklist`。更新仓库后，已安装的 skill 通过链接同步更新。
 
-```bash
-git clone https://github.com/Alchemist-Jo/ai-paper-writing.git ~/.claude/skills/ai-paper-writing
-```
+## 依赖
 
-已有同名目录时先自行保留现有修改。此 skill 仅在明确选择时调用；保留 Claude 与 Codex 的手动调用配置。
+- 带构建入口的 LaTeX 项目，例如 `latexmk`、Makefile 或构建脚本。
+- Poppler 的 `pdftoppm`、`pdfinfo`、`pdffonts`，用于页面渲染和 PDF 检查。
+- Python 3，用于 `paper-checklist/scripts/scan.py` 和 `paper-visuals/scripts/figure_audit.py`，两者只用标准库。
+- draw.io 桌面版，用于在命令行导出示意图。
 
-```text
-使用 $ai-paper-writing，Grill 模式。
-基于这份初稿和实验结果，和我共同确定中心主张并修改引言。
-每次只问一个问题，给出你的推荐答案和依据。
-```
+## 许可
 
-```text
-使用 $ai-paper-writing，Draft 模式。
-根据已有结果重构全文，利用统计结果安排章节与图表。
-直接修改 LaTeX，保留数字，缺失结果明确占位。
-```
-
-```text
-使用 $ai-paper-writing，Style 模式。
-模仿这篇示范论文的方法段落和结果图，先看实际原文与图表。
-学习段落功能、句式节奏、面板顺序和 caption，使用我的方法与数据完成产物。
-```
-
-## 统计如何参与写作
-
-- **篇幅分配**：先确定论文类型和真实预算，再使用对应会议的模块比例，调整到当前证据需求。
-- **段落组织**：用摘要功能与段落动作统计检查衔接，示范论文决定具体表达。
-- **语言选择**：让 propose、show、find、observe 等动词与证据角色一致。
-- **图表设计**：用面板、系列、caption 和字号分布校准密度，最终模板决定实际尺寸。
-- **实验呈现**：明确分母、聚合、重复层级、误差含义、失败与成本。
-
-保留 **250 篇 ICLR/ICML 的原始统计、68 份 CSV、250 份逐篇深读与 250 份视觉分析记录**。CVPR 保留案例实验数字及来源，未将其描述为大样本调查。样本频率不构成固定模板或录用预测。
-
-## 仿写的具体过程
-
-实际原文/图表 → 提取章节、段落、语言与视觉特点 → 对应自己的主张和数据 → 完成文字或图表 → 对照检查。
-
-学习论证和视觉组织，使用原创表述与自己的结果。不能从范文转移数字、误差条或因果结论；只有文本时不声称已确认字体和颜色。制作图表的请求会继续完成源码与渲染。
-
-## 资料与验证
-
-- [统计决策规则](references/statistics-to-decisions.md)
-- [CVPR / ICLR / ICML 适配](references/venue-adaptation.md)
-- [示范论文仿写流程](references/reference-imitation.md)
-- [完整来源说明](SOURCE.md)
-- [验证记录及限制](reports/validation.md)
-
-本次发布保留并检查原材料，未重新核验所有论文，也未进行论文质量提升的独立盲评。采用 MIT 许可，第三方材料保留原许可证与署名。
+CC BY-NC-SA 4.0，各 skill 的 frontmatter 也作了相同声明。见 [LICENSE](LICENSE)。

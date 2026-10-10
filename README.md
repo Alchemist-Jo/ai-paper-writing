@@ -1,127 +1,70 @@
-<p align="center"><img src="assets/banner.svg" alt="AI Paper Writing — Grill, Draft, Style" width="100%"></p>
+# AI Paper Writing Skills
 
-<p align="center"><strong>A manually invoked skill for turning research evidence into clear AI papers.</strong><br>ICLR / ICML corpus statistics · CVPR case studies · paragraph and figure imitation</p>
+Eight agent skills for writing and revising machine-learning papers in LaTeX. Each skill owns one part of the paper and works as a long-horizon guide: it reads the project first, keeps ledgers of what it must preserve, splits large passes across subagents, inspects rendered pages, and stops to ask only at decisions that belong to the author.
 
-<p align="center"><a href="#three-modes">Three modes</a> · <a href="#quick-start">Quick start</a> · <a href="#evidence-library">Evidence library</a> · <a href="README.zh-CN.md">中文说明</a></p>
+The skills follow the Agent Skills format, so both Claude Code and Codex can load them. Discussion and reports are in Chinese, and manuscript text is in English.
 
-## Three modes
+## Skills
 
-| Mode | Start here when… | What you get |
+| Skill | Owns | Example request |
 | --- | --- | --- |
-| **Grill** | You want to reason through the paper together | One focused question at a time, a recommended answer, and prose built from your decisions |
-| **Draft** | You have evidence and want the manuscript written or improved | A draft, a reorganized paper, a revised section, an experiment plan or an evidence-based review |
-| **Style** | You have a paper whose writing or figures you want to learn from | A source-to-target mapping and original prose or editable visuals using your own evidence |
+| `paper-framing` | central claim, argument chain, contribution framing, section outline | 理一下这篇论文的主线 |
+| `paper-opening` | abstract, introduction, related work, citation verification | 重写摘要和引言 |
+| `paper-method` | method section, notation, equations, theory statements | 方法部分符号统一，去掉数字 |
+| `paper-experiments` | setup, results, ablations, statistics, benchmark construction | 实验分析不要复述表格数字 |
+| `paper-visuals` | figures through a staged drawing workflow, tables, captions | 方法图不改逻辑，优化呈现 |
+| `paper-language` | minimal-edit polish, wording, Chinese-to-English translation | 最小改动润色这一节 |
+| `paper-typesetting` | layout, page budget, statements, bibliography, Overleaf or Git sync | 压到 9 页，图不要在标题下面 |
+| `paper-checklist` | read-only audit and pre-submission check, routed to the owners above | 投稿前全文检查 |
 
-The modes share the same scientific constraints. Reported values, comparison conditions and uncertainty stay intact. Unknown results remain visible placeholders. A clear drafting request proceeds directly; Grill waits for your answers on unresolved decisions.
+`paper-checklist` never edits the manuscript. It returns one numbered table per tier (阻碍提交, 影响理解, 局部表达), and each row names the skill that owns the fix. Replying "修 1、3、5" applies those rows through their owning skills and reruns the affected checks.
 
-## Quick start
+## Conventions and Exemplars
 
-Install into the skill directory for your agent. These commands create a new directory and do not replace an existing installation.
+Each skill detects the manuscript's own conventions before editing, such as caption style, the display-equation environment and the run-in heading macro, and keeps them. The order of precedence is:
 
-**Codex**
+1. the venue's rules
+2. the user's explicit instruction
+3. the conventions the manuscript already uses
+4. the forms suggested in the skill
 
-```bash
-git clone https://github.com/Alchemist-Jo/ai-paper-writing.git ~/.codex/skills/ai-paper-writing
-```
+To borrow structure or layout from another paper, name it in the request with an arXiv id, a PDF or a TeX source. The skill caches it under `~/.cache/paper-exemplars/<id>/` and reads it as data.
 
-**Claude Code**
+## Install
 
-```bash
-git clone https://github.com/Alchemist-Jo/ai-paper-writing.git ~/.claude/skills/ai-paper-writing
-```
-
-Select `ai-paper-writing` explicitly in your agent. The package preserves `disable-model-invocation: true` and `policy.allow_implicit_invocation: false`.
-
-### Grill: develop the argument together
-
-```text
-Use $ai-paper-writing in Grill mode.
-Here are my draft and experiment results. Help me decide the central claim,
-then write the introduction with me. Ask one question at a time and give
-your recommended answer with its evidence.
-```
-
-### Draft: finish the requested manuscript work
-
-```text
-Use $ai-paper-writing in Draft mode.
-Restructure this paper around the supported findings. Use the ICLR corpus
-statistics to guide section allocation and evidence placement. Edit the LaTeX
-directly, preserve reported numbers, and mark missing results explicitly.
-```
-
-### Style: learn from a specific paper
-
-```text
-Use $ai-paper-writing in Style mode.
-Use the attached paper as the reference for my method section and result figure.
-Inspect its paragraph functions, sentence rhythm, panel order and caption.
-Write with my method and data, and deliver editable figure source plus a render.
-```
-
-## How the evidence changes the writing
-
-| Source observation | Practical use |
-| --- | --- |
-| Method, results and introduction account for a conference-equal 55.68% of the source corpus's normalized main text | Reserve enough room to connect the method to its evidence; adapt the allocation to the paper type |
-| The source corpus contains 242 distinct complete abstract sequences | Preserve functional progression while allowing the sentence count to follow the content |
-| Figure and table captions have different length distributions and information roles | Fit the setting, encoding and statistical meaning to each object instead of enforcing fixed word counts |
-| CVPR cases separate task coverage, controlled interventions, visual outcomes and cost | Make each experiment answer a stated question and preserve the scope of each metric |
-
-The source corpus contains **250 ICLR/ICML papers**. The CVPR material is a **small purposive case collection**. These have different evidentiary scopes. Frequencies describe the source sample; they are not submission rules, quality scores or acceptance predictions.
-
-## Reference imitation, in practice
-
-```text
-Actual paper / rendered figure
-        ↓
-Section roles · paragraph moves · language · visual organization
-        ↓
-Source feature → your claim / method / data → target paragraph / panel
-        ↓
-Original prose or editable visuals
-        ↓
-Check facts, statistical meaning and final-size readability
-```
-
-Style mode inspects the real source when available. A reading note helps locate the relevant passage; a text-only source cannot establish colors or layout. Missing evidence is stated explicitly. Reference-paper results and error bars never become your project's results.
-
-## Evidence library
-
-| Material | Location |
-| --- | --- |
-| Full statistical report | [250-paper analysis](sources/anatomy/reports/statistical_analysis_250.md) |
-| Full figure/table analysis | [Visual analysis](sources/anatomy/reports/visual_design_analysis_250.md) |
-| 68 CSV tables | [Statistics and inventories](sources/anatomy/reports/tables/) |
-| 250 paper readings | [Reading index](sources/anatomy/reports/tables/reading_index.csv) |
-| 250 visual audit records | [Visual audit index](sources/anatomy/reports/visual_audit_index.md) |
-| CVPR cases and experimental numbers | [Venue adaptation](references/venue-adaptation.md) |
-| Paragraph / figure mapping template | [Style profile](references/style-profile-template.md) |
-
-The statistics, readings and visual records are inherited source material. This release checks preservation and routing; it does not claim a fresh re-review of all 250 papers or measured improvement in paper quality. See [provenance](SOURCE.md) and [validation](reports/validation.md).
-
-A small, dependency-free query tool makes the tables usable without loading an entire inventory:
+Clone the repository, then link each skill into the skill directories of the agents you use.
 
 ```bash
-python3 scripts/query_evidence.py   --table checkpoint_250_module_summary   --where module=method   --columns module,conference_equal_normalized_word_share,normalized_word_share_q1,normalized_word_share_q3
+git clone https://github.com/Alchemist-Jo/ai-paper-writing.git ~/paper-skills
+
+# Claude Code
+mkdir -p ~/.claude/skills
+for d in ~/paper-skills/paper-*; do ln -sfn "$d" ~/.claude/skills/"$(basename "$d")"; done
+
+# Codex
+mkdir -p ~/.agents/skills
+for d in ~/paper-skills/paper-*; do ln -sfn "$d" ~/.agents/skills/"$(basename "$d")"; done
 ```
 
-## Package structure
+Every skill is model-invocable. The agent selects it from the request, and it can also be called by name, as `/paper-checklist` in Claude Code or `$paper-checklist` in Codex. Pulling the repository updates the installed skills through the links.
 
-```text
-SKILL.md           Three-mode entry point
-agents/            Manual-invocation metadata
-references/        Current writing, statistical and visual workflows
-sources/           Preserved source reports, data and paper analyses
-scripts/           Focused evidence queries and package validation
-evals/             Routing examples and behavioral cases
-reports/           What has actually been checked
+## Requirements
+
+- A LaTeX project with a build entry, such as `latexmk`, a Makefile or a build script.
+- `pdftoppm`, `pdfinfo` and `pdffonts` from Poppler, for rendered-page inspection and PDF checks.
+- Python 3 for `paper-checklist/scripts/scan.py` and `paper-visuals/scripts/figure_audit.py`, which use the standard library only.
+- The draw.io desktop application, for exporting diagrams from the command line.
+
+## Layout
+
+```
+paper-<name>/
+  SKILL.md            instructions loaded when the skill triggers
+  agents/openai.yaml  Codex display name, prompt and invocation policy
+  references/         detail read on demand, such as worked examples
+  scripts/            deterministic checks (paper-checklist, paper-visuals)
 ```
 
-Current behavior is defined by `SKILL.md` and `references/`. Historical source recipes remain available for context: fixed page counts, fixed figure counts and manuscript-specific restrictions do not override the current workflow.
+## License
 
-## Scope and license
-
-The skill supports research argumentation and paper artifacts. Training execution, standalone blog/report writing and submission remain outside its invocation boundary. It does not silently invoke neighboring skills.
-
-The new workflow is released under [MIT](LICENSE). Inherited materials retain their [source notices](THIRD_PARTY_NOTICES.md). Scientific papers, figures and linked external assets retain their original rights.
+CC BY-NC-SA 4.0, declared in each skill's frontmatter. See [LICENSE](LICENSE).

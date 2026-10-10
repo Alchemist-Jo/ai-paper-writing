@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Visuals"
+  short_description: "Draw and polish paper figures, tables and captions"
+  default_prompt: "Use $paper-visuals to polish the method figure without changing its logic."
+
+policy:
+  allow_implicit_invocation: true
