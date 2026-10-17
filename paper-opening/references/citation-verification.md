@@ -5,16 +5,7 @@ Verification answers three questions for each key: whether the work exists as ci
 ## Procedure for each key
 
 1. **Identity.** Search Google Scholar, DBLP, the venue's proceedings page and arXiv using the title. Match title, authors, year and venue against the entry. Where arXiv and Scholar disagree on metadata, take Scholar and the venue page.
-2. **Version.** Decide which version the sentence relies on: preprint, conference or journal extension. Never combine fields from different versions into an entry that never existed.
-
-   Take the source by this order, and stop at the first that has the work:
-
-   1. A formally published version, in a journal or a conference proceedings. It replaces a preprint of the same work, and the entry cites the publication.
-   2. For a conference paper, DBLP, where its venue, year, pages and the author list in publication order are recorded. The proceedings page of the venue confirms what DBLP gives.
-   3. For a journal paper, the journal's own page for the article.
-   4. arXiv, only when no published version exists. Then the entry states the arXiv identifier as its identifier, not as a journal.
-
-   A work with a published version is never cited from arXiv. A preprint cited because no publication exists is marked as a preprint in its entry.
+2. **Version.** Decide which version the sentence relies on: preprint, conference or journal extension. Never combine fields from different versions into an entry that never existed. Take the metadata from the published version, then from DBLP for a conference paper or the journal's own page for a journal article, and from arXiv only when no published version exists. A work that has been published is never cited from arXiv; a preprint cited because nothing exists is marked as one.
 3. **Support.** Find the passage, equation, table or theorem that supports the citing sentence. A title or abstract supports only what it states. A paper that did not evaluate a setting does not show failure in that setting.
 4. **Entry hygiene.** Correct author names and venue. Remove `note` fields that make unsupported or informal remarks, as well as scraping timestamps and access dates, unless the template requires them. Keep existing keys stable, because other sections may cite them.
 
