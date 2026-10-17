@@ -48,7 +48,7 @@ Check this on the rendered pages. A table with a one-row header next to a table 
 
 A table that fits but cannot be read still needs a layout change.
 
-The size is never per table. Every table in the paper prints at the one `\small` that the preamble sets, so `\small`, `\footnotesize`, `\tabcolsep` and `\arraystretch` do not appear in a table's source. `\resizebox{\linewidth}{!}{...}` is the only exception, and only for a table that overflows.
+The base size is never per table. Every table uses the one `\small` that the preamble sets, so `\small`, `\footnotesize`, `\tabcolsep` and `\arraystretch` do not appear in a table's source. One `\resizebox{\linewidth}{!}{...}` around an overflowing table is the only scaling exception; check the resulting printed text size for legibility.
 
 ## Captions
 

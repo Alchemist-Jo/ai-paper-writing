@@ -23,7 +23,7 @@ The skills follow the Agent Skills format, so both Claude Code and Codex can loa
 
 The skills are general. A venue template and its call for papers govern what they specify: the page limit, margins, fonts, required sections and statements. The skills cover what the template leaves open, and where the two disagree the template wins. Each `SKILL.md` opens with this rule, and a conflict between a skill and the template is reported rather than applied silently.
 
-Two house rules apply to every paper, because no template states them: all tables and all displayed equations print at one size that the preamble sets, and a table's source carries only its cells, its booktabs rules and its caption.
+Subject to the venue rules above, shared defaults set one base size for tables and displayed equations in the preamble. A table's source carries its cells, booktabs rules and caption; one `\resizebox` is allowed only for overflow. Each citation group in the body contains at most four works, counting adjacent citation commands together even across source lines. Bibliography cleanup removes fabricated or unsuitable comments from fields and standalone comments while preserving accurate metadata, necessary source/license notices and citation keys.
 
 ## Conventions and Exemplars
 

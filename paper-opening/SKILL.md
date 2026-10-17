@@ -44,6 +44,10 @@ An exemplar is a user-named paper (arXiv ID, PDF or TeX path). Download arXiv so
 
 **Citation ledger.** One row per citation key the edit adds or touches. Each row records the key, what the sentence uses it for, and its verification status. Statuses and the verification procedure are in [references/citation-verification.md](references/citation-verification.md). Read that file before adding any new reference.
 
+## Citation Groups
+
+Throughout the main text, each citation group supports one claim and cites at most four distinct works. This applies to `\cite`, `\citep`, `\citet`, `\parencite`, `\textcite` and equivalent commands. Adjacent citation commands, including commands separated only by punctuation, spaces or line breaks, count as one group. When more sources are relevant, select the most relevant works or divide the discussion into distinct claims with their own supporting sources. Splitting citation commands alone does not satisfy the limit.
+
 ## Write the Abstract
 
 Unless the manuscript or exemplar fixes a different shape, write one paragraph with no line breaks, in this order of functions:
@@ -75,7 +79,6 @@ Hard rules for the introduction:
 - No experiment, number or result appears before the proposal is stated.
 - No formulas, math symbols, or references to sections, theorems or propositions in the prose, such as "(Theorem 1)" or "Section 4 shows". These ask the reader to jump ahead. The contribution list is the exception described below.
 - No name-listing of related methods. The introduction cites prior work by what it does. The full map belongs in related work.
-- Each `\citep` holds at most four keys. When more sources are needed, split the claim so that each group supports one point.
 - Figures are referenced by what they show ("as Figure 1 shows, (a) ... while (b) ..."). The caption text is never repeated.
 - The prose is not a row of short sentences. Use a short sentence for a turning point and a longer one for a causal procedure.
 - No lists other than the contribution list.
@@ -137,7 +140,8 @@ Look at the rendered pages rather than inferring layout from the source.
 ## Final Checklist
 
 - The abstract and introduction prose contain no symbols, formulas or section and theorem references, and the introduction states no result before the proposal. Section pointers appear only at the end of contribution items.
-- Every `\citep` holds four keys or fewer.
+- Each citation group in the main text cites at most four distinct works, counting adjacent commands together across line breaks.
+- Touched bibliography fields and comments contain no fabricated content, unsupported evaluations, AI prompts or unsuitable working notes; accurate metadata and useful source, license and collaborator records remain.
 - Every touched key is verified, or reported with its exact status. No unverified entry was deleted.
 - Every abstract sentence and contribution item maps to support in the body.
 - Abstract, introduction and conclusion state the same problem, result and scope.

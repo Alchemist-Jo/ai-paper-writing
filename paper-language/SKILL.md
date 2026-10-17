@@ -29,7 +29,7 @@ Two readers judge the result. A reviewer should find the text precise and easy t
 1. Read the target span and one paragraph on each side of it. Transitions are judged against the neighbors.
 2. Read the project's terminology record if one exists. Otherwise, collect the terms the span uses and check how the rest of the paper writes them.
 3. Fetch the remote copy before editing if the project has one, so collaborators' latest text is the text being polished.
-4. Identify text written by collaborators: comment macros, attributed edits, or sections the user names. Comments stay in place.
+4. Identify text written by collaborators: comment macros, attributed edits, or sections the user names. Comments stay in place unless the user authorizes their removal. An authorized bibliography cleanup follows [citation verification](../paper-opening/references/citation-verification.md).
 5. Profile the author's voice from untouched paragraphs: typical sentence length, preferred connectives, use of "we", tense in method and results, spelling variety (American or British), and hyphenation habits.
 
 ## Build the Edit Ledger
@@ -120,7 +120,7 @@ Compile with the project's build entry when an edit could move the layout: a par
 
 - Every number, symbol, label, citation key and term matches the original.
 - No paragraph is longer than before. Every row in the edit ledger has a reason.
-- Collaborator text changed only for grammar or contradiction, and every comment is still in place.
+- Collaborator text changed only for grammar or contradiction, and comments remain unless their removal was authorized, including unsuitable BibTeX comments in a requested cleanup.
 - No banned opener, banned word, em dash or `$>$`/`$<$` in prose remains in the edited span.
 - No process or status text remains in the edited span.
 - Every connective names a real relation, and every paragraph opening follows from the previous paragraph.

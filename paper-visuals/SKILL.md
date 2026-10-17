@@ -116,7 +116,7 @@ Text below about 70% of the caption size is reported with its location, and is e
 - Every value comes from its source, at the source's precision, consistent within each column.
 - Mark the best value only within comparable groups, by the metric's direction, and state the marking in the caption.
 - Keep the project's macros for deltas, best values and highlighted rows.
-- The table source carries cells, booktabs rules and its caption, and nothing that sets size or spacing: no `\small`, `\footnotesize`, `\tabcolsep`, `\arraystretch` or `\vspace`. The paper sets one size for all tables and all equations in the preamble. A table wider than its slot is wrapped in `\resizebox{\linewidth}{!}{...}` and in nothing else. A global font size does not enter the body text.
+- The table source carries cells, booktabs rules and its caption, and nothing that sets size or spacing: no `\small`, `\footnotesize`, `\tabcolsep`, `\arraystretch` or `\vspace`. The paper sets one base size for all tables and all displayed equations in the preamble. A table that still overflows after the fitting steps below is wrapped once in `\resizebox{\linewidth}{!}{...}`; this is the only scaling exception, and its printed text must remain legible. Body text keeps the template's size.
 
 [references/tables-and-captions.md](references/tables-and-captions.md) holds table and caption examples and the consistency checks. Read it before unifying tables.
 
@@ -137,7 +137,7 @@ Apply this order and stop when it reads clearly:
 4. split the figure into panels, or into two figures
 5. move a secondary panel or table to the appendix, with a precise reference
 
-For a table: shorten headers, regroup columns, split the table, move detail to the appendix. Tables print at the single `\small` size `paper-typesetting` sets in the preamble, so a table never carries its own font size. A table that still overflows is wrapped once in `\resizebox{\linewidth}{!}{...}`, and that is the only resize.
+For a table: shorten headers, regroup columns, split the table, move detail to the appendix. Tables use the single `\small` base size `paper-typesetting` sets in the preamble, so a table never carries its own font size. A table that still overflows is wrapped once in `\resizebox{\linewidth}{!}{...}`, and that is the only resize.
 
 ## Stop and Discuss
 

@@ -49,9 +49,11 @@ Return the page number and the source line for every row.
 For each key in the batch:
 
 1. **Identity.** Search the exact title on Google Scholar, DBLP, the venue's proceedings and arXiv. Match authors, year and venue.
-2. **Version.** Prefer the published version over the preprint. Never merge fields from different versions.
+2. **Version.** Cite the published version whenever one exists. Take metadata from the published record first, then from DBLP for a conference paper or the journal's own page for a journal article; use arXiv only when no published version exists, marking the entry as a preprint. Use Scholar for discovery and cross-check metadata against these sources. Never merge fields from different versions.
 3. **Support.** Find the passage, table or theorem that supports the citing sentence. A paper that did not evaluate a setting does not show failure in it.
-4. **Entry.** Flag informal `note` fields, timestamps, truncated author lists and wrong venues.
+4. **Entry.** Inspect `note`, `annote`, `comment` and `addendum` fields, `@Comment{...}` blocks and `%` comments. Flag fabricated content, unsupported evaluations, AI prompts and working notes unsuitable for submission, as well as unnecessary timestamps, truncated author lists and wrong venues. Preserve accurate metadata, necessary license and source information, and substantive collaborator records. Recommend correcting or removing the offending text without deleting the entry or changing its key.
+
+Check citation groups throughout the main text. Each group supports one claim and cites at most four distinct works across `\cite`, `\citep`, `\citet`, `\parencite`, `\textcite` and equivalent commands. Count adjacent commands together even when punctuation, spaces or line breaks separate them. Recommend selecting the most relevant sources or dividing the discussion into distinct claims with their own evidence. Splitting commands alone does not satisfy the limit, and an existing citation-density convention does not override it.
 
 Statuses: verified, version mismatch (the entry describes another version than the one to cite, including an older arXiv version), identity only, not found yet, inconclusive (a tool failed or was rate-limited), wrong (direct evidence). A failed search never makes a key "wrong". Only "wrong" and a "not found yet" key after three query forms become blocking rows. Pre-2000 references that are not foundational works are information rows.
 

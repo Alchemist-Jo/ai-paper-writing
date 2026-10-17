@@ -84,6 +84,8 @@ Place a label at the end of the body, such as `\label{mainbodyend}` above, and r
 
 ## Bibliography entry cleanup
 
+Read `note`, `annote`, `comment` and `addendum` fields, `@Comment{...}` blocks and `%` comments. Remove fabricated claims, unsupported judgments, AI instructions and working notes unsuitable for submission, together with timestamps and access dates the style does not require. Preserve accurate publication metadata, necessary source and license notices, and collaborator review comments unless their removal is authorized. Delete the offending comment or field, keeping the entry and its citation key. Follow [citation verification](../../paper-opening/references/citation-verification.md) to correct metadata against the published source.
+
 **Before.**
 
 ```bibtex
