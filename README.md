@@ -19,6 +19,12 @@ The skills follow the Agent Skills format, so both Claude Code and Codex can loa
 
 `paper-checklist` never edits the manuscript. It returns one numbered table per tier (阻碍提交, 影响理解, 局部表达), and each row names the skill that owns the fix. Replying "修 1、3、5" applies those rows through their owning skills and reruns the affected checks.
 
+## Scope
+
+The skills are general. A venue template and its call for papers govern what they specify: the page limit, margins, fonts, required sections and statements. The skills cover what the template leaves open, and where the two disagree the template wins. Each `SKILL.md` opens with this rule, and a conflict between a skill and the template is reported rather than applied silently.
+
+Two house rules apply to every paper, because no template states them: all tables and all displayed equations print at one size that the preamble sets, and a table's source carries only its cells, its booktabs rules and its caption.
+
 ## Conventions and Exemplars
 
 Each skill detects the manuscript's own conventions before editing, such as caption style, the display-equation environment and the run-in heading macro, and keeps them. The order of precedence is:

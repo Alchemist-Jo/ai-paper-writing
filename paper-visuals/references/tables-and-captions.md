@@ -44,9 +44,11 @@ Check this on the rendered pages. A table with a one-row header next to a table 
 2. Regroup columns under a shared header.
 3. Split the table where it holds two comparisons.
 4. Move per-item detail to the appendix, keeping the results that change a conclusion in the main text.
-5. As a last step, apply a local font size or `\resizebox`, then check legibility on the rendered page.
+5. As a last step, wrap the table in `\resizebox{\linewidth}{!}{...}`, then check legibility on the rendered page.
 
 A table that fits but cannot be read still needs a layout change.
+
+The size is never per table. Every table in the paper prints at the one `\small` that the preamble sets, so `\small`, `\footnotesize`, `\tabcolsep` and `\arraystretch` do not appear in a table's source. `\resizebox{\linewidth}{!}{...}` is the only exception, and only for a table that overflows.
 
 ## Captions
 

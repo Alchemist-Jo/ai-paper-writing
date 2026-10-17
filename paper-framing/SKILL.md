@@ -8,6 +8,8 @@ license: CC-BY-NC-SA-4.0
 
 Use this skill to decide what a paper argues and in what order, then to carry that structure into the manuscript.
 
+**Scope.** A venue template and its call for papers decide the parts they specify, such as the page limit, margins, fonts, required sections and statements. This skill covers what they leave open, and the template wins where the two disagree.
+
 ## Goal
 
 Every run ends in one of two deliverables.

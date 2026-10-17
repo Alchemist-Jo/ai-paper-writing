@@ -8,6 +8,8 @@ license: CC-BY-NC-SA-4.0
 
 Use this skill to turn results into evidence for the paper's claims, with tables carrying the numbers and prose carrying the analysis.
 
+**Scope.** A venue template and its call for papers decide the parts they specify, such as the page limit, margins, fonts, required sections and statements. This skill covers what they leave open, and the template wins where the two disagree.
+
 ## Goal
 
 The deliverable is the revised experiments section in the manuscript files. It must:

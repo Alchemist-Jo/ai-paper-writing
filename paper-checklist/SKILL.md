@@ -8,6 +8,8 @@ license: CC-BY-NC-SA-4.0
 
 Use this skill to find what still blocks, confuses or weakens a paper, and to hand each problem to the skill that fixes it. The check never edits the manuscript.
 
+**Scope.** A venue template and its call for papers decide the parts they specify, such as the page limit, margins, fonts, required sections and statements. This skill covers what they leave open, and the template wins where the two disagree.
+
 ## Goal
 
 The deliverable is a Chinese issue report with one table per tier, in this order: 阻碍提交, 影响理解, 局部表达. Each row has five columns:

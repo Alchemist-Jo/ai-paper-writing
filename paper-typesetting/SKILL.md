@@ -8,6 +8,8 @@ license: CC-BY-NC-SA-4.0
 
 Use this skill to make the compiled paper fit its venue and read cleanly page by page, without changing its content.
 
+**Scope.** A venue template and its call for papers decide the parts they specify, such as the page limit, margins, fonts, required sections and statements. This skill covers what they leave open, and the template wins where the two disagree.
+
 ## Goal
 
 The deliverable is the compiled PDF and the changed LaTeX sources. The PDF must:
@@ -59,7 +61,11 @@ The ledger records where the main body ends, compared against the limit. Every f
 These rules hold unless the venue requires otherwise.
 
 - **Spacing commands only inside floats.** `\vspace` appears only inside figure and table environments. Headings and paragraphs never receive manual spacing. One user stated it as "vspace 确定是只有图像和表格，没有section".
-- **No global shrinking.** No global `\small`, no change to margins, line spread or the template's font sizes. A local font size for one table is allowed as the last step of fitting that table.
+- **Body text keeps the template's size.** The body, headings and captions keep the sizes the template sets. No margin change, no line-spread change, and no `\small` around body text.
+- **One size for every table and every equation, set once.** Set `\small` for all tables and all displayed equations in the preamble, for example `\AtBeginEnvironment{tabular}{\small}` with the same hook for `equation`, extended to `tabular*`, `tabularx` and `equation*` when the project uses them, or a single project macro that wraps both. Every table in the paper then prints at one size and every equation at one size.
+- **A table carries no formatting of its own.** No font size, no `\tabcolsep`, no `\arraystretch`, no `\vspace` and no per-table rule macro, since those values live in the preamble once. `\centering` inside the float stays. This is the "表格默认什么都不要带" rule: a table's source holds its cells, its booktabs rules and its caption, nothing else.
+- **Overflow is `\resizebox`, and only that.** A table too wide for the column or page is wrapped once in `\resizebox{\linewidth}{!}{...}`. Do not reach for `\small`, `\footnotesize`, a narrower `\tabcolsep` or `adjustbox` to make it fit. Check the printed text size on the rendered page after the resize.
+- **Rules come from booktabs.** `\toprule`, `\midrule` and `\bottomrule`, with `\cmidrule` under a grouped header. Never `\hline`, never `\cline`, never a vertical rule.
 - **Figures and headings.** A figure never sits directly under a section heading. As the same user put it: "图像不能出现在标题下面".
 - **Figures and page bottoms.** A figure does not sit at the bottom of a page in the main body, unless the venue's template places it there.
 - **No consecutive figures without text.** Two figures in a row become one figure with panels, a side-by-side pair, or a wrapped figure beside text.
@@ -79,13 +85,13 @@ When the main body exceeds its limit, apply this order. Rebuild after each step,
 4. shrink figures within legibility, through the rules of paper-visuals
 5. move detail to the appendix, such as full configurations, secondary tables and long derivations, with a precise reference
 
-Never use global `\small`, spacing at headings, margin changes or deletion of content the user did not approve. Steps 3 and 5 change content, so present the list of cuts or moves to the user before applying them.
+Never shrink body text, add spacing at headings, change margins or delete content the user did not approve. Tables and equations keep the single size set in the preamble, so fitting a table means shortening it, regrouping columns, splitting it or moving detail to the appendix before any `\resizebox`. Steps 3 and 5 change content, so present the list of cuts or moves to the user before applying them.
 
 ## Statements, Appendix and Bibliography
 
 **Statements.** Ethics, reproducibility and LLM-usage statements go where the venue specifies, often right after the main body and outside the page count. Some venues require the statements to begin on the page after the limit. Check the position on the rendered page.
 
-**Appendix.** Numbering follows the template and the manuscript's existing form. Every appendix reference in the body resolves to the right section.
+**Appendix.** Numbering follows the template and the manuscript's existing form. Every appendix reference in the body resolves to the right section. Where the paper has proofs, the first appendix is `Proofs`, ordered as `paper-method` prescribes: subsections follow the order of the body, each proof follows its restated statement, and a result the body never states is stated and proved where the appendix first uses it. Where the paper has no proof, the first letter goes to the first real appendix content.
 
 **Bibliography.** The bib file is part of the paper:
 
@@ -137,7 +143,8 @@ Report what was inspected. A clean log without looking at the pages is not an in
 
 - The build finishes with no undefined references or citations.
 - The main body ends within the limit, and the statements sit where the venue requires.
-- No `\vspace` outside floats, no global font shrinking, no margin change.
+- No `\vspace` outside floats, no margin change, no change to body font size.
+- Tables and equations print at the single size set in the preamble, and no table carries its own font size, `\tabcolsep`, `\arraystretch` or resize.
 - No figure directly under a heading, at a page bottom, or overlapping text or equations.
 - No two figures in a row without text between them, unless they form one figure.
 - Every number, label, citation key and approved sentence is still present.

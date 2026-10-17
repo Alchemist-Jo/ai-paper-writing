@@ -8,6 +8,8 @@ license: CC-BY-NC-SA-4.0
 
 Use this skill to make each figure and table carry one point clearly, in the paper's own terms, and to make all of them look like one designed set. Figures get a full production workflow, because they fail more often than any other part of a paper and every failure is visible at a glance.
 
+**Scope.** A venue template and its call for papers decide the parts they specify, such as the page limit, margins, fonts, required sections and statements. This skill covers what they leave open, and the template wins where the two disagree.
+
 ## Goal
 
 The deliverables are figure sources, exported figures, table LaTeX and captions, inserted in the manuscript. Each must:
@@ -114,6 +116,7 @@ Text below about 70% of the caption size is reported with its location, and is e
 - Every value comes from its source, at the source's precision, consistent within each column.
 - Mark the best value only within comparable groups, by the metric's direction, and state the marking in the caption.
 - Keep the project's macros for deltas, best values and highlighted rows.
+- The table source carries cells, booktabs rules and its caption, and nothing that sets size or spacing: no `\small`, `\footnotesize`, `\tabcolsep`, `\arraystretch` or `\vspace`. The paper sets one size for all tables and all equations in the preamble. A table wider than its slot is wrapped in `\resizebox{\linewidth}{!}{...}` and in nothing else. A global font size does not enter the body text.
 
 [references/tables-and-captions.md](references/tables-and-captions.md) holds table and caption examples and the consistency checks. Read it before unifying tables.
 
@@ -134,7 +137,7 @@ Apply this order and stop when it reads clearly:
 4. split the figure into panels, or into two figures
 5. move a secondary panel or table to the appendix, with a precise reference
 
-For a table: shorten headers, regroup columns, split the table, move detail to the appendix. A local font size or `\resizebox` comes last, and a global `\small` never.
+For a table: shorten headers, regroup columns, split the table, move detail to the appendix. Tables print at the single `\small` size `paper-typesetting` sets in the preamble, so a table never carries its own font size. A table that still overflows is wrapped once in `\resizebox{\linewidth}{!}{...}`, and that is the only resize.
 
 ## Stop and Discuss
 

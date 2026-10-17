@@ -8,6 +8,8 @@ license: CC-BY-NC-SA-4.0
 
 Use this skill to write the parts of a paper that readers outside the subfield read first, and to keep every citation in them real.
 
+**Scope.** A venue template and its call for papers decide the parts they specify, such as the page limit, margins, fonts, required sections and statements. This skill covers what they leave open, and the template wins where the two disagree.
+
 ## Goal
 
 The deliverable is the revised abstract, introduction or related work in the manuscript files. It must:

@@ -8,6 +8,8 @@ license: CC-BY-NC-SA-4.0
 
 Use this skill to write the method as a computation a peer can trace and reimplement, with notation, equations and theory that agree with that computation.
 
+**Scope.** A venue template and its call for papers decide the parts they specify, such as the page limit, margins, fonts, required sections and statements. This skill covers what they leave open, and the template wins where the two disagree.
+
 ## Goal
 
 The deliverable is the revised method section in the manuscript files. It must:
@@ -88,16 +90,25 @@ Introduce each display with its purpose: what it defines or computes. After the 
 
 - An equation is part of a sentence and carries its punctuation.
 - Stacked displays without prose between them are split by a sentence that says how each feeds the next.
-- A label is added only when the text refers to the equation.
-- New displays use the detected environment. Existing legal environments and macros stay.
+- Every display is numbered. `\[ \]`, `$$` and other unnumbered display forms are not used, since a reader may need to refer to any equation. A project with no display environment of its own uses `equation`, with `aligned` inside it when the expression runs over several lines.
+- An existing numbered environment stays, such as `align` or a project macro that wraps `equation`; converting it would change the numbering or the spacing the manuscript already has. One project uses one display form across the body, the proofs and the appendix.
+- Numbering and labelling are separate. Every display is numbered; a label is added only where the text, a proof or the appendix refers to that equation.
 - Long expressions break at a relation or a top-level operator, never inside a bracket pair.
-- A global font-size reduction of equations is a typesetting decision, outside this skill.
+- The font size of displays is set once for the whole paper by `paper-typesetting`; this skill does not size an equation.
 
 **Meaning changes are flagged, never slipped in.** Changing a sum to a mean, adding an epsilon, reversing a KL divergence, swapping an inverse for a pseudoinverse or dropping an assumption can change the method. Make such a change only when the definitions, dimensions or source code determine it uniquely, and report it as a mathematical change with its reason. When two readings are plausible, keep the original and report both.
 
 ## Theory
 
 State theory in three layers: the general result, the extra conditions for the useful special case, and what the result implies for the implemented method. Assumptions come before the result. The body keeps the statement and the proof idea. A long proof goes to the appendix with a precise reference.
+
+## Proofs and Appendix A
+
+When the paper has proofs, the first appendix is titled `Proofs`. Its subsections follow the order in which the results appear in the body, not the order in which they were proved or the order of difficulty. Each proof is an `\begin{proof}` block, and the statement it proves stands immediately before it, restated as a theorem, proposition, corollary or lemma, so no proof block opens without its statement above it.
+
+**A result the body never states is stated and proved where the appendix first uses it.** It is not collected into Appendix A with the main results, and it is not left as a bare proof. Put its statement and proof at that point of use. When no later appendix part uses it, and the body does not state it, it supports nothing and is deleted.
+
+**No proofs, no Appendix A.** When the paper has no proof, the first appendix letter goes to the first real appendix content. An empty `Proofs` section is not kept for the sake of the layout.
 
 Align the target quantity, assumptions and probability source before comparing two bounds. A smaller upper bound does not show a smaller measured error, and a stationarity guarantee does not show global optimality. An empirical method with no theoretical claim gets no theorem added for completeness.
 

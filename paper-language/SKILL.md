@@ -8,6 +8,8 @@ license: CC-BY-NC-SA-4.0
 
 Use this skill to make existing paper text correct, clear and continuous while it still reads as the author wrote it.
 
+**Scope.** A venue template and its call for papers decide the parts they specify, such as the page limit, margins, fonts, required sections and statements. This skill covers what they leave open, and the template wins where the two disagree.
+
 ## Goal
 
 The deliverable is the polished text in the manuscript files. It must:
