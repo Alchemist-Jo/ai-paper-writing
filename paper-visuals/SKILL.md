@@ -86,6 +86,8 @@ New figures and redesigns pass through a concept before anything is drawn.
 
 ## Build the Source
 
+For tensor semantics, TikZ rendering or matplotlib plots, use the bundled [figure-viz](figure-viz/SKILL.md) skill. It includes rendering scripts, style assets, chart references and examples. Apply this paper's figure brief, terminology and verification requirements alongside its rendering workflow.
+
 - Draw in an editable, reproducible source: the tool the project already uses, otherwise draw.io for diagrams, TikZ for math-heavy schematics and a plotting script for data. [references/drawing-tools.md](references/drawing-tools.md) gives the procedure for each tool, including draw.io file structure, build scripts, export commands and plotting defaults.
 - Take every font, size, color, stroke and radius from the brief. A value that is not in the brief is added to the brief first.
 - Prefer a build script that edits the source by cell id over manual edits, so a style change applies to every figure at once and a polish can be shown to keep every cell.
